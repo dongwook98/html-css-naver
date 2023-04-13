@@ -16,8 +16,13 @@
 } */
 
 #header-search h2 {
-  display: none;
-  /* 스크린 리더도 못읽음 */
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  /* 화면에 보이진 않지만 스크린 리더는 읽음*/
 }
 
 #header-search fieldset {
