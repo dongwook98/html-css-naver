@@ -1,9 +1,18 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <!-- 언어를 utf-8로 저장해라. -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 인터넷 익스플로러에서도 엣지브라우저처럼 보이게해라. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 이걸빼면 핸드폰에서 데스크탑보는것처럼 글자가 작게보임 -->
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <!-- /, ./, ../ 차이점
+      / : 프로젝트 폴더
+      프로젝트 폴더는 잘못알고 있을수 있다.
+      ./ : 현재 폴더
+      ../ : 부모 폴더
+    -->
     <title>NAVER</title>
     <style>
       html,
@@ -19,6 +28,11 @@
         width: 1280px;
         background-color: yellow;
       }
+      /* block, inline-block, inline 차이점
+        block : 너비 100% 차지, 마진을 가짐
+        inline-block : 100% 차지 ❌, 너비와 높이를 가질 수 있음, 
+        inline : 너비와 높이를 무시
+      */
       #header-hambuger {
         margin-top: 18px;
         background-color: blue;
@@ -28,8 +42,13 @@
       #main {
         height: 2000px;
       }
+      /* 부모는 자식의 너비,높이를 따라감 */
     </style>
   </head>
+  <!-- head와 body의 차이점 
+    head: html문서에 대한 설명 (메타 데이터)
+    body: 
+  -->
   <body>
     <div id="wrap">
       <div id="wrap-center">
