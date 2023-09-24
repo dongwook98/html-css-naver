@@ -68,6 +68,9 @@
         --color_dic: #031f5f;
         --color_dic_rgb: 3, 31, 95;
       }
+      * {
+        box-sizing: border-box; /* border까지 포함해서 width */
+      }
       html,
       body {
         margin: 0;
@@ -85,17 +88,25 @@
         text-align: left;
         position: relative;
       }
-      #header-hambuger {
+      #header-hambuger,
+      #header-pay,
+      #header-talk,
+      #header-notify {
         position: absolute;
         top: 18px;
-        left: -10px;
         display: inline-block;
         padding: 10px;
         background: none;
         border: none;
         cursor: pointer;
       }
-      #header-hambuger:hover::before {
+      #header-hambuger {
+        left: -10px;
+      }
+      #header-hambuger:hover::before,
+      #header-pay:hover::before,
+      #header-talk:hover::before,
+      #header-notify:hover::before {
         position: absolute;
         content: '';
         z-index: 0;
@@ -107,71 +118,41 @@
         background-color: var(--color_option_bg);
       }
       #header-hambuger > div {
+        background-position: -82px -329px;
+      }
+      #header-hambuger > div,
+      #header-pay > div,
+      #header-talk > div,
+      #header-notify > div {
         background-image: url(./sp_main.png);
+        background-size: 435px 414px;
+        background-repeat: no-repeat;
         width: 26px;
         height: 26px;
         position: relative;
         z-index: 1;
-        background-size: 435px 414px;
-        background-position: -82px -329px;
-        background-repeat: no-repeat;
       }
       #header-pay {
-        position: absolute;
-        top: 18px;
         left: 43px;
-        display: inline-block;
         padding: 7px;
-        background: none;
-        border: none;
-        cursor: pointer;
       }
       #header-pay > div {
-        background-image: url(./sp_main.png);
-        background-size: 435px 414px;
         background-position: -295px -177px;
-        background-repeat: no-repeat;
         width: 32px;
         height: 32px;
-        /* position: relative; */
       }
       #header-talk {
-        position: absolute;
-        top: 18px;
         right: 40px;
         width: 46px;
-        display: inline-block;
-        padding: 10px;
-        background: none;
-        border: none;
-        cursor: pointer;
       }
       #header-talk > div {
-        background-image: url(./sp_main.png);
-        background-size: 435px 414px;
         background-position: -190px -329px;
-        background-repeat: no-repeat;
-        width: 26px;
-        height: 26px;
       }
       #header-notify {
-        position: absolute;
-        top: 18px;
         right: -10px;
-        width: 46px;
-        display: inline-block;
-        padding: 10px;
-        background: none;
-        border: none;
-        cursor: pointer;
       }
       #header-notify > div {
-        background-image: url(https://pm.pstatic.net/resources/asset/sp_main.6519c842.png);
-        background-size: 435px 414px;
         background-position: -136px -329px;
-        background-repeat: no-repeat;
-        width: 26px;
-        height: 26px;
       }
       #main {
         height: 2000px;
@@ -199,19 +180,19 @@
           <button id="header-pay">
             <!-- ::before -->
             <div></div>
-            <span class="blind">확장 영역</span>
+            <span class="blind">페이 바로가기</span>
             <!-- ::after -->
           </button>
           <button id="header-talk">
             <!-- ::before -->
             <div></div>
-            <span class="blind">확장 영역</span>
+            <span class="blind">톡</span>
             <!-- ::after -->
           </button>
           <button id="header-notify">
             <!-- ::before -->
             <div></div>
-            <span class="blind">확장 영역</span>
+            <span class="blind">알림</span>
             <!-- ::after -->
           </button>
         </div>
