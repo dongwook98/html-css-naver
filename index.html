@@ -100,8 +100,17 @@
         border: none;
         cursor: pointer;
       }
-      #header-hambuger {
-        left: -10px;
+      #header-hambuger > div,
+      #header-pay > div,
+      #header-talk > div,
+      #header-notify > div {
+        background-image: url(./sp_main.png);
+        background-size: 435px 414px;
+        background-repeat: no-repeat;
+        width: 26px;
+        height: 26px;
+        position: relative;
+        z-index: 1;
       }
       #header-hambuger:hover::before,
       #header-pay:hover::before,
@@ -117,20 +126,11 @@
         border-radius: 50%;
         background-color: var(--color_option_bg);
       }
+      #header-hambuger {
+        left: -10px;
+      }
       #header-hambuger > div {
         background-position: -82px -329px;
-      }
-      #header-hambuger > div,
-      #header-pay > div,
-      #header-talk > div,
-      #header-notify > div {
-        background-image: url(./sp_main.png);
-        background-size: 435px 414px;
-        background-repeat: no-repeat;
-        width: 26px;
-        height: 26px;
-        position: relative;
-        z-index: 1;
       }
       #header-pay {
         left: 43px;
@@ -178,22 +178,16 @@
             <!-- ::after -->
           </button>
           <button id="header-pay">
-            <!-- ::before -->
             <div></div>
             <span class="blind">페이 바로가기</span>
-            <!-- ::after -->
           </button>
           <button id="header-talk">
-            <!-- ::before -->
             <div></div>
             <span class="blind">톡</span>
-            <!-- ::after -->
           </button>
           <button id="header-notify">
-            <!-- ::before -->
             <div></div>
             <span class="blind">알림</span>
-            <!-- ::after -->
           </button>
         </div>
         <div id="search"></div>
