@@ -212,6 +212,7 @@
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
           }
           #search-svg {
+            position: relative;
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -224,6 +225,19 @@
             width: 24px;
             height: 24px;
             fill: #03c75a;
+          }
+          #search-svg::after {
+            display: none;
+          }
+          #search > form:focus-within #search-svg::after {
+            content: '';
+            width: 1px;
+            height: 20px;
+            background-color: #e4e4e4;
+            position: absolute;
+            display: inline-block;
+            right: 0;
+            top: 20px;
           }
           #search-input {
             width: 480px;
@@ -254,7 +268,6 @@
             border: none;
             cursor: pointer;
           }
-
           #search-keyboard::before {
             content: '';
             display: block;
@@ -264,6 +277,9 @@
             background-repeat: no-repeat;
             width: 24px;
             height: 16px;
+          }
+          #search-keyboard:hover {
+            filter: brightness(0.7);
           }
           #search-recent::before {
             content: '';
