@@ -76,6 +76,13 @@
       form {
         margin: 0;
         padding: 0;
+        color: var(--color_body);
+        font-size: 10.5px;
+        line-height: 10.5px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic',
+          '맑은 고딕', helvetica, 'Apple SD Gothic Neo', sans-serif;
+        font-weight: 500;
+        letter-spacing: -0.4px;
       }
       #wrap {
         text-align: center;
@@ -83,7 +90,6 @@
       #wrap-center {
         display: inline-block;
         width: 1280px;
-        background-color: yellow;
       }
       #header {
         text-align: left;
@@ -195,34 +201,97 @@
         <style>
           /* 개발 편의상 여기다 style 태그 넣음 */
           #search > form {
-            display: inline-block;
+            display: inline-flex;
             width: 708px;
             height: 60px;
             border: 1px solid #03c75a;
             border-radius: 33px;
             text-align: left;
           }
-          #search > form > input {
+          #search > form:hover {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+          }
+          #search-svg {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 68px;
+            height: 100%;
+            padding-left: 10px;
+            margin-right: 12px;
+          }
+          #search-svg svg {
+            width: 24px;
+            height: 24px;
+            fill: #03c75a;
+          }
+          #search-input {
             width: 480px;
             height: 100%; /* 부모 height가 60-2(border) */
+            padding: 17px 0;
+            font-size: 2rem;
+            line-height: 24px;
+            font-weight: bold;
             border: none;
             outline: none;
           }
-          #search > form svg {
-            width: 24px;
-            height: 24px;
+          #search-input::placeholder {
+            color: white;
           }
-          #search > form a {
-            display: inline-block;
-            width: 68px;
-            height: 100%;
-            padding: 17px 17px 17px 27px;
-            margin-right: 12px;
+          #search-input:focus::placeholder {
+            color: #e4e4e4;
+          }
+          #search-right {
+            display: flex;
+            flex: 1;
+            justify-content: flex-end;
+            align-items: stretch;
+          }
+          #search-keyboard,
+          #search-recent,
+          #search-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+          }
+
+          #search-keyboard::before {
+            content: '';
+            display: block;
+            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.6519c842.png);
+            background-size: 435px 414px;
+            background-position: -91px -308px;
+            background-repeat: no-repeat;
+            width: 24px;
+            height: 16px;
+          }
+          #search-recent::before {
+            content: '';
+            display: block;
+            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.6519c842.png);
+            background-size: 435px 414px;
+            background-position: -318px -247px;
+            background-repeat: no-repeat;
+            width: 10px;
+            height: 6px;
+          }
+          #search-button {
+            padding: 17px 27px 16px 10px;
+          }
+          #search-button::before {
+            content: '';
+            display: block;
+            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.6519c842.png);
+            background-size: 435px 414px;
+            background-position: -295px -329px;
+            background-repeat: no-repeat;
+            width: 25px;
+            height: 25px;
           }
         </style>
         <div id="search">
           <form action="">
-            <a href="#">
+            <a id="search-svg" href="#">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -234,8 +303,22 @@
               </svg>
             </a>
             <label for="search-input" class="blind">검색어 입력</label>
-            <input id="search-input" type="text" />
-            <button class="blind">검색</button>
+            <input
+              id="search-input"
+              type="text"
+              placeholder="검색어를 입력해 주세요."
+            />
+            <div id="search-right">
+              <button href="#" id="search-keyboard">
+                <span class="blind">입력도구</span>
+              </button>
+              <button href="#" id="search-recent">
+                <span class="blind">자동완성/최근검색어 펼치기</span>
+              </button>
+              <button id="search-button">
+                <div><span class="blind">검색</span></div>
+              </button>
+            </div>
           </form>
         </div>
         <div id="nav"></div>
