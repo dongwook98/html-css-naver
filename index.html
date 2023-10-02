@@ -274,7 +274,7 @@
           #search-keyboard::before {
             content: '';
             display: block;
-            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.6519c842.png);
+            background-image: url('./sp_main.png');
             background-size: 435px 414px;
             background-position: -91px -308px;
             background-repeat: no-repeat;
@@ -287,7 +287,7 @@
           #search-recent::before {
             content: '';
             display: block;
-            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.6519c842.png);
+            background-image: url('./sp_main.png');
             background-size: 435px 414px;
             background-position: -318px -247px;
             background-repeat: no-repeat;
@@ -300,7 +300,7 @@
           #search-button::before {
             content: '';
             display: block;
-            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.6519c842.png);
+            background-image: url('./sp_main.png');
             background-size: 435px 414px;
             background-position: -295px -329px;
             background-repeat: no-repeat;
@@ -352,12 +352,17 @@
             line-height: 20px;
           }
 
+          #nav a {
+            text-decoration: none;
+          }
+
+          #nav a:visited {
+            color: black;
+          }
+
           #nav a div {
             margin: 0 auto;
             position: relative;
-          }
-          #nav a {
-            text-decoration: none;
           }
 
           #nav a div::before {
@@ -366,19 +371,20 @@
             position: absolute;
             top: -2px;
             left: -3px;
-            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.6519c842.png);
+            background-image: url('./sp_main.png');
             background-size: 435px 414px;
             background-position: 0px -128px;
             background-repeat: no-repeat;
             width: 54px;
             height: 54px;
           }
+
           #nav a div::after {
             content: '';
-            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.6519c842.png);
+            display: inline-block;
+            background-image: url('./sp_main.png');
             background-size: 435px 414px;
             background-repeat: no-repeat;
-            display: inline-block;
             width: 44px;
             height: 44px;
             z-index: 1;
@@ -386,9 +392,6 @@
             margin: 2px;
           }
 
-          #nav a:visited {
-            color: black;
-          }
           #nav li {
             width: 64px;
             /* height는 자식요소에 따라 결정된다. 굳이 안줘도 됨 */
@@ -396,10 +399,10 @@
             display: flex;
             justify-content: center;
           }
+
           #nav li:nth-of-type(1) {
             margin-left: 0;
           }
-
           #nav li:nth-of-type(1) a div::after {
             background-position: -250px -90px;
           }
@@ -433,6 +436,7 @@
           #nav li:nth-of-type(10) a div::after {
             background-position: -250px -135px;
           }
+
           #nav li a span {
             display: inline-block; /* inline일때 마진안먹을수있음 */
             margin-top: 7px;
@@ -525,6 +529,9 @@
           #main-left-ad {
             height: 130px;
           }
+          #main-right-ad {
+            height: 240px;
+          }
           section[id^='main'] {
             box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0, 0, 0, 0.04);
             border-radius: 8px;
@@ -585,10 +592,6 @@
             color: var(--color_caption2);
             letter-spacing: -0.4px;
           }
-          #main-login > div:last-of-type a:first-of-type,
-          #main-login > div:last-of-type a:last-of-type {
-            position: relative;
-          }
           #main-login > div:last-of-type a:hover {
             text-decoration: underline;
           }
@@ -602,9 +605,7 @@
             background-color: var(--color_dot_divider);
             margin: 4px 12px 0;
           }
-          #main-right-ad {
-            height: 240px;
-          }
+
           #main-weather,
           #main-stock {
             padding: 0 18px;
