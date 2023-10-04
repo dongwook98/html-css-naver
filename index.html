@@ -997,7 +997,6 @@
             display: flex;
             font-size: 1.4rem;
             line-height: 1.7rem;
-            margin: 0 20px;
             justify-content: flex-start;
           }
 
@@ -1032,7 +1031,65 @@
 
           #main-shopping-gray .right {
             margin-left: auto;
-            padding: 18px 0;
+            padding: 10px 0;
+            display: flex;
+          }
+
+          #main-shopping-gray .right span {
+            margin: auto;
+            color: var(--color_caption2);
+            font-size: 1.3rem;
+            line-height: 16px;
+            font-weight: 600;
+          }
+
+          #main-shopping-gray .right span:last-of-type {
+            color: rgba(113, 113, 113, 0.6);
+          }
+
+          #main-shopping-gray .right button {
+            background-color: #fbfbfc;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            display: inline-block;
+            border: 1px solid rgba(211, 213, 215, 0.8);
+            cursor: pointer;
+            border-radius: 4px 0 0 4px;
+            background-color: transparent;
+          }
+
+          #main-shopping-gray .right .prev::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            transform: translate(-50%, -50%) rotate(45deg);
+            margin-left: 2px;
+            border-left: 2px solid #80868c;
+            border-bottom: 2px solid #80868c;
+            margin-left: 1px;
+          }
+
+          #main-shopping-gray .right .next::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            transform: translate(-50%, -50%) rotate(45deg);
+            margin-left: -2px;
+            border-top: 2px solid #80868c;
+            border-right: 2px solid #80868c;
+            margin-left: -1px;
+          }
+
+          #main-shopping-gray .right .next {
+            border-left: 0;
+            border-radius: 0 4px 4px 0;
           }
 
           #main-shopping-grid {
@@ -1187,12 +1244,12 @@
                   </div>
                   <div class="right">
                     <span>1</span>
-                    <span>/18</span>
+                    <span>/13&nbsp;&nbsp;</span>
                     <button class="prev">
-                      <span class="blind">이전페이지</span>
+                      <i><span class="blind">이전페이지</span></i>
                     </button>
                     <button class="next">
-                      <span class="blind">다음페이지</span>
+                      <i><span class="blind">다음페이지</span></i>
                     </button>
                   </div>
                 </div>
@@ -1243,7 +1300,7 @@
                 </button>
                 <div class="text">
                   <span class="hot">쇼핑아이템</span>
-                  더보기 1<span>/13</span>
+                  더보기 1<span class="total">/13</span>
                 </div>
                 <button class="next">
                   <span class="blind">다음</span>
